@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .header {
+            padding: 30px;
+            background-color: #f8ff0a;
+            text-align: center;
+        }
+        .footer{
+            padding: 30px;
+            background-color: #f8ff0a;
+            text-align: center;
+        }
+        .main {
+            overflow: auto;
+        }
+        .main .sidebar{
+            width: 15%;
+            padding: 30px;
+            background-color: #26ff20 ;
+            float: left;
+            height:500px;
+        }
+        .main .content{
+            float: left;
+            width: 40%;
+            padding:30px;
+
+        }
+        .main .sidebar-right{
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrap">
+    <!-- begin header-->
+    <div class="header">
+        header
+    </div>
+    <!-- end header-->
+
+    <!-- begin main-->
+    <div class="main">
+        <div class="sidebar">
+            sidebar content 1
+        </div>
+        <div class="content">
+            content
+        </div>
+        <div class="sidebar sidebar-right">
+            sidebar content 2
+        </div>
+    </div>
+    <!-- end main content-->
+
+    <!-- begin footer-->
+    <div class="footer">
+        footer
+    </div>
+    <!--end footer-->
+</div>
+</body>
+</html>
