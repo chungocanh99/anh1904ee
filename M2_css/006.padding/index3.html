@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="normalize.css"/>
+    <style type="text/css">
+        #box-mode0 {
+            background: orange;
+            color: white;
+            border: 3px solid red;
+            /*
+            padding top==padding left==padding bottom==padding right
+             */
+            margin-bottom:30px;
+            margin-left: 10px;
+            padding-top: 30px;
+            padding-bottom: 20px;
+            padding-left: 10px;
+            padding-right: 40px;
+        }
+        #box-model {
+            background: orange;
+            color: white;
+            border: 3px solid red;
+            padding: 50px 50px;
+        }
+        #box-mode3 {
+            background: green;
+            color: black;
+            border: 3px solid blue;
+            margin: 20px 10px 30px 50px;
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<h1> Padding tạo ra 1 vùng đệm bên trong đối tượng thẻ html</h1>
+<pre>
+    Nếu margin tạo ra khoảng cách bên ngoài thẻ html thì padding tạo ra khoảng cách bên trong thẻ html
+    Quy tắc viết tắt:
+    - nếu padding theo 4 hướng top, bottom,right, left khác nhau thì áp dụng quy tắc kim đồng hồ
+    padding: A B C D; {trong đó:A là padding-top, B:right, C:bottom, D:left}
+    - nếu padding top==padding bottom và padding left=padding right
+    padding: A B; { A: padding top và bottom, B: left và right
+    - nếu padding 4 hướng bằng nhau
+    padding: A; {A: 4 hướng}
+    Quy tắc này cũng sẽ áp dụng tương tự cho margin
+</pre>
+
+<div id="box-mode0">
+    Nội dung thẻ div không có padding
+</div>
+
+<div id="box-model">
+    Nội dung thẻ div có padding
+</div>
+
+<div id="box-mode3">
+    Nội dung div 3
+</div>
+</body>
+</html>

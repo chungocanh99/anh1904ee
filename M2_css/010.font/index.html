@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="normalize.css">
+    <style type="text/css">
+        #font1 {
+            font-family: "Times New Roman",Times, serif ;
+        }
+        #font2 {
+            border: 1px solid red;
+            font-family: Arial, serif ;
+        }
+    </style>
+</head>
+<body>
+
+<pre>
+    font-family: kiểu font chữ trong văn bản
+    có 3 kiểu font chính
+    1. generic font: những font chữ mà có kiểu hiển thị tương tự nhau
+    2. font-familu: font cụ thể(time new roman, arial...)
+    khi sử dụng font-familu sẽ có dạng fallback
+    các máy tính khác nhau thì có cài đặt font khác nhau
+    thư mục cài đặt font: C://windows/fonts
+    có những máy có font này nhưng k có font kia
+    thì trình duyệt font-family:"Times New Roman", TImes, Serif;
+    sẽ tìm cái font times new roman nếu font này có trên pc thì sẽ hiển thị
+    nếu không có thì tìm sang font times
+    nếu times lại không có thì sẽ tìm sang họ font serif
+    ***
+    các font có nhiều hơn 1 chữ cái ví dụ "Times new roman" thì phải cài đặt font trong dấu ""
+</pre>
+<div id="font1"> Nội dung văn bản </div>
+<div id="font2"> Nội dung văn bản</div>
+</body>
+</html>

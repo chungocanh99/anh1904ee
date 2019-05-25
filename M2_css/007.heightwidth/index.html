@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="normalize.css">
+    <style type="text/css">
+        #box-mode1 {
+            background: #26ff20;
+            width: 300px;
+            height: 200px;
+        }
+        #parent {
+            background: yellow;
+            width: 300px;
+            height: 200px;
+        }
+        #child {
+            background: #2afff5;
+            width: 50%;
+            height: 50%;
+        }
+        #child2 {
+            background: #ff7a70;
+            width: 50%;
+            height: 50%;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+
+<h1> thuộc tính width và height trong css</h1>
+<pre>
+    Khi sử dụng đơn vị là % thif kích cỡ của chiều rộng và chiều cao
+    sẽ tỷ lệ với kích cỡ của thẻ trực tiếp đang chứa nó (thẻ cha)
+    ví dụ thẻ mẹ width: 300px; thẻ con có width: 50% -> con=1 nửa mẹ
+</pre>
+
+<div id="box-mode1">
+    Nội dung thẻ div
+</div>
+
+<div id="parent"> cha
+    <div id="child">
+        con gái
+    </div>
+    <!--<div id="child2">
+        con trai
+    </div>-->
+</div>
+</body>
+</html>
