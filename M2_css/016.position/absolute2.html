@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="normalize.css">
+    <style type="text/css">
+        #target {
+            background: green;
+            width: 150px;
+            height: 150px;
+            position: absolute;
+            top: 50px;
+            right: 0;
+
+        }
+        .container {
+            background: orange;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div id="target">
+    absolute
+</div>
+</div>
+
+<pre>
+    thẻ absolute nằm trong thẻ div khác như thẻ div này position=static
+    khi đặt thẻ con có position là absolute thì thẻ con sẽ trượt khỏi thẻ mẹ và đặt vị trí mới của nó dựa theo thẻ body
+    để đặt tọa độ
+</pre>
+</body>
+</html>
