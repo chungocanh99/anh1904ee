@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        /**
+        default
+        */
+        body {
+            background: yellow;
+        }
+        /**
+        áp dụng cho màn hình từ 1200px trở xuống
+        */
+        @media screen and (max-width: 1200px) {
+            body {
+                background: #26ff20;
+            }
+            /**
+            áp dụng cho màn hình từ 1000px trở xuống
+             */
+            @media screen and (max-width: 1000px) {
+                body {
+                    background: deepskyblue;
+                }
+                /**
+                áp dụng cho màn hình từ 780px trở xuống 0
+                 */
+                @media screen and (max-width: 780px) {
+                    body {
+                        background: #ff2f2c;
+                    }
+        }
+    </style>
+</head>
+<body>
+
+<h1> sử dụng nhiều @media screen đổi màu thẻ body theo kích cỡ màn hình </h1>
+</body>
+</html>

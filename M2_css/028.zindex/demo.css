@@ -1,0 +1,30 @@
+.demo {
+    margin-left: 40px;
+    margin-top: 40px;
+}
+.red, .green, .blue {
+    width: 100px;
+    height: 100px;
+    color: white;
+    line-height:100px; /*khoảng cách giữa các chữ trong văn bản */
+    text-align: center;
+}
+.red {
+    background: red;
+    z-index: 3;
+    position: relative;
+}
+.green {
+    margin-top: -40px;
+    margin-left: 60px;
+    background: green;
+    z-index: 2;
+    /*position: relative; */
+}
+.blue {
+    margin-top: -40px;
+    margin-left: 120px;
+    background: blue;
+    z-index:-1;/* */
+    position: relative;
+}

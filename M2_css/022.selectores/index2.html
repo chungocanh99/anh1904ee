@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <style type="text/css">
-        div p {
+        div > p {
             background: #26ff20;
         }
     </style>
@@ -12,7 +12,7 @@
 <body>
 
 <pre>
-    selectorA selectorB: selectorB phải nằm trong selectorA
+    selectorA > selectorB: selectorB phải nằm trực tiếp bên trong selectorA
     ví dụ:
     1: div p
     2: .container .row
@@ -21,8 +21,10 @@
     5: #cotainer .row
 </pre>
 <div>
-    <p> thẻ p bên trong thẻ div </p>
+    <p> thẻ p nằm trực tiếp bên trong thẻ div </p>
+    <section>
+        <p> thẻ p cấp 2 </p>
+    </section>
 </div>
-<p> thẻ p bên ngoài thẻ div </p>
 </body>
 </html>

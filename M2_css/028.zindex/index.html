@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<div class="demo">
+
+    <div class="red">
+        <span>Red</span>
+    </div>
+    <div class="green">
+        <span>Green</span>
+    </div>
+    <div class="blue">
+        <span>Blue</span>
+    </div>
+</div>
+<pre>
+
+    3 block cùng thuộc 1 stacking context
+    thứ tự đảm bảo theo quy tắc: element nào có z-index cao hơn sẽ hiện lên trên
+    nếu chưa có cái nào đc set z-index thì thứ tự sẽ phụ thuộc vào thứ tự xuất hiện từ trước ra sau của DOM tree
+    nếu k chỉ định position thì z-index sẽ mất tác dụng
+    bỏ position z-index sẽ trở về vị trí z-index=0
+    để ẩn ra sau z-index=0 thì set z-index thành 1 số âm
+
+</pre>
+</body>
+</html>
