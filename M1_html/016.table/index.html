@@ -10,6 +10,13 @@
         table {
             width:100%;
         }
+        #table1 {
+            border-collapse: separate;
+        }
+
+        #table2 {
+            border-collapse: collapse;
+        }
     </style>
 </head>
 <body>
@@ -24,13 +31,40 @@
     để làm tiêu đề cho các cột
 </pre>
 
-<table>
+<table id="table1">
     <thead>
         <tr>
             <th>Số thứ tự</th> <!--Hàng đầu tiên chỉ dùng th, từ hàng thứ 2 dùng td, căn giữa và tô đậm-->
             <th>Tỉnh thành phố</th>
             <th>Dân số</th>
         </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>Hà Nội</td>
+        <td>8tr</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>Hồ chí minh</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>Đà nẵng</td>
+        <td>2tr</td>
+    </tr>
+    </tbody>
+</table>
+<hr>
+<table id="table2">
+    <thead>
+    <tr>
+        <th>Số thứ tự</th> <!--Hàng đầu tiên chỉ dùng th, từ hàng thứ 2 dùng td, căn giữa và tô đậm-->
+        <th>Tỉnh thành phố</th>
+        <th>Dân số</th>
+    </tr>
     </thead>
     <tbody>
     <tr>
