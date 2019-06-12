@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<pre>
+    vòng lặp do while
+
+    1- sự khởi đầu của vòng lặp
+    do {
+    //code thực thi của vòng lặp
+
+
+    //cuối do là sự thay đổi của vòng lặp
+    }
+        while(điều kiện chạy của vòng lặp) {
+</pre>
+
+<script type="text/javascript">
+    /**
+     * vd1: in ra các số từ 0 đến 9
+     */
+    console.log("in ra các số từ 0 đến 9");
+    var i=0;
+    do {
+        console.log(i);
+        i++;
+    } while(i<10)
+    {
+
+        /**
+         * vd2: in ra các số từ 0 đến 20 nhưng chỉ in số chẵn
+         */
+        console.log("in ra các số từ 0 đến 20 nhưng chỉ in số chẵn");
+        var i = 2;
+        do {
+            if (i % 2 == 0) {
+                console.log(i);
+                i += 2;
+            }
+        } while (i < 20)
+    }
+
+
+    /**
+     * vd3: in ra các số từ 0 đến 20 nhưng chỉ in số lẻ
+     */
+    console.log("in ra các số từ 0 đến 20 nhưng chỉ in số lẻ");
+    var i=1;
+    do {
+        if(i%2!=0) {
+    console.log(i);
+        i+=2;}
+        } while(i<20)
+
+
+</script>
+</body>
+</html>

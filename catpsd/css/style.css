@@ -1,0 +1,12 @@
+/*
+header css
+ */
+
+/*
+banner
+ */
+.banner {
+    height: 936px;
+    width: 100%;
+    background: url("../images/banner.jpg") top center;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<pre>
+    vòng lặp while
+
+    1. sự khởi đầu của vòng lặp đặt trước while
+    while(điều kiện chạy của vòng lặp) {
+    //code thực thi của vòng lặp
+
+    //cuối vòng lặp while => sự thay đổi của vòng lặp sau mỗi lần chạy
+</pre>
+
+<script type="text/javascript">
+    /**
+     * vd1: in ra các số từ 0 đến 9
+     */
+    console.log("in ra các số từ 0 đến 9");
+    var i=0;
+    while(i<10) {
+        console.log(i);
+        i++;
+    }
+    /**
+     * vd2: in ra các số từ 0 đến 20 nhưng chỉ in số chẵn
+     */
+    console.log("in ra các số từ 0 đến 20 nhưng chỉ in số chẵn");
+    var i=2;
+    while(i<20)
+        if (i % 2 == 0) {
+            console.log(i);
+            i+=2;
+        }
+
+    /**
+     * vd3: in ra các số từ 0 đến 20 nhưng chỉ in số lẻ
+     */
+    console.log("in ra các số từ 0 đến 20 nhưng chỉ in số lẻ");
+    var i=1;
+    while(i<20)
+        if(i%2!=0) {
+            console.log(i);
+            i+=2;
+        }
+
+</script>
+</body>
+</html>
