@@ -31,33 +31,97 @@ header .header-inner {
     padding: 30px 0;
     margin-bottom: 5px;
 }
-header .main-navigation .main-menu {
-    list-style: none;
+
+/*==Style cho menu===*/
+.menu ul {
+    background: #fffd1a;
+    list-style-type: none;
+    text-align: center;
+    overflow: hidden; /* phần nội dung tràn bị cắt đi và phần nội dung bị ẩn đi*/
     width: 1500px;
-    background: #ff5b5d;
-    padding: 0;
-    margin: 0;
 }
-/*
-li.menu-item là li cấp 1
- */
-.main-navigation .main-menu li.menu-item{
-    background: orange;
+.menu li {
+    color: #f1f1f1;
     float: left;
-    position: relative;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    margin-left: -5px;
+}
+.menu a {
+    text-decoration: none;
+    color: #ff3f4c;
+    display: block;
+}
+.menu a:hover {
+    background: #F1F1F1;
+    color: #333;
+}
+.menu .search {
+    float: right;
 }
 
-/*.main-navigation .main-menu li a {
-    color:red;
-    font-size: 18px;
-    display: block;
-    background: #f8ff0a;
-    text-decoration: none;
-    padding: 10px 20px;
-}*/
-.main-navigation .main-menu li a:hover {
-    background: #5af8ff;
+.menu .search input[type=text] {
+    padding: 6px;
+    margin-top: 5px;
+    margin-left: 5px;
+    font-size: 15px;
+    border: 1px solid #000;
 }
+
+.menu .search input[type=submit] {
+    float: right;
+    padding: 3px 5px;
+    margin-top: 8px;
+    margin-right: 800px;
+    background: #ddd;
+    font-size: 17px;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+
+.menu .search input[type=submit]:hover {
+    background: #ccc;
+}
+
+.personal{
+    float: right;
+    width: 700px;
+    text-align: center;
+}
+.account{
+    float:left;
+    width:70%;
+
+}
+.account a span{
+    background: url('acount.png');
+    width: 26px;
+    height: 26px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.account a,ul.login li a {
+    text-decoration:none;
+    color: #000;
+
+}
+ul.login{
+    float:right;
+    width:36%;
+    margin:0;
+}
+ul.login li{
+    display:inline-block;
+
+}
+
+.account a:hover,ul.login li a:hover{
+    color: #1DBAA5;
+}
+
+
+
 .content {
     background-color: #0f6674;
     height: 800px;
