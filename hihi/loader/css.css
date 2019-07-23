@@ -24,7 +24,7 @@ body {
 
 }
 header .header-inner {
-    height: 150px;
+    height: 100px;
     background: #26ff20;
     font-size: 32px;
     text-align: center;
@@ -33,92 +33,103 @@ header .header-inner {
 }
 
 /*==Style cho menu===*/
-.menu ul {
+header .menu {
+    background-color: yellow;
+}
+header .menu ul {
     background: #fffd1a;
     list-style-type: none;
     text-align: center;
     overflow: hidden; /* phần nội dung tràn bị cắt đi và phần nội dung bị ẩn đi*/
-    width: 1500px;
+    /*width: 1460px;*/
+    height: 60px;
 }
-.menu li {
+header .menu li {
     color: #f1f1f1;
     float: left;
     width: 120px;
     height: 40px;
     line-height: 40px;
     margin-left: -5px;
+    font-size: 20px;
 }
-.menu a {
+header .menu a {
     text-decoration: none;
     color: #ff3f4c;
     display: block;
 }
-.menu a:hover {
+header .menu a:hover {
     background: #F1F1F1;
     color: #333;
 }
-.menu .search {
+header .menu .search {
     float: right;
 }
 
-.menu .search input[type=text] {
+header .menu .search input[type=text] {
     padding: 6px;
     margin-top: 5px;
     margin-left: 5px;
     font-size: 15px;
-    border: 1px solid #000;
 }
 
-.menu .search input[type=submit] {
+header .menu .search input[type=submit] {
     float: right;
     padding: 3px 5px;
     margin-top: 8px;
     margin-right: 800px;
     background: #ddd;
-    font-size: 17px;
-    border: 1px solid #000;
+    font-size: 15px;
     cursor: pointer;
 }
 
-.menu .search input[type=submit]:hover {
+header .menu .search input[type=submit]:hover {
     background: #ccc;
 }
 
-.personal{
+header .personal{
     float: right;
-    width: 700px;
     text-align: center;
-}
-.account{
-    float:left;
-    width:70%;
 
 }
-.account a span{
-    background: url('acount.png');
-    width: 26px;
-    height: 26px;
-    display: inline-block;
-    vertical-align: middle;
-}
-.account a,ul.login li a {
+
+header ul.login li a {
     text-decoration:none;
     color: #000;
 
 }
-ul.login{
+header ul.login{
     float:right;
-    width:36%;
-    margin:0;
+    height: 100px;
+
+
 }
-ul.login li{
-    display:inline-block;
+header ul.login li.dangnhap {
+    border: 1px solid #333;
+
+}
+header ul.login li.dangxuat {
+    border: 1px solid #333;
+
+}
+header ul.login li{
+    float: right:
+
 
 }
 
-.account a:hover,ul.login li a:hover{
+header ul.login li a:hover{
     color: #1DBAA5;
 }
+
+
+
+header ul.login li a:hover{
+    color: #1DBAA5;
+}
+
+
+
 
 
 
