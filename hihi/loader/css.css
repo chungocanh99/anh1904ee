@@ -52,6 +52,8 @@ header .menu li {
     line-height: 40px;
     margin-left: -5px;
     font-size: 20px;
+    margin-top: 13px;
+
 }
 header .menu a {
     text-decoration: none;
@@ -71,6 +73,8 @@ header .menu .search input[type=text] {
     margin-top: 5px;
     margin-left: 5px;
     font-size: 15px;
+    margin-top: 13px;
+
 }
 
 header .menu .search input[type=submit] {
@@ -81,6 +85,8 @@ header .menu .search input[type=submit] {
     background: #ddd;
     font-size: 15px;
     cursor: pointer;
+    margin-top: 15px;
+
 }
 
 header .menu .search input[type=submit]:hover {
@@ -100,8 +106,7 @@ header ul.login li a {
 }
 header ul.login{
     float:right;
-    height: 100px;
-
+    margin-top: -45px;
 
 }
 header ul.login li.dangnhap {
@@ -114,6 +119,7 @@ header ul.login li.dangxuat {
 }
 header ul.login li{
     float: right:
+    margin-top: 15px;
 
 
 }
