@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<pre>
+    innerHTML: viết thành 1 phần tử HTML
+    document.write(): viết vào đầu ra
+    window.alert(): viết vào 1 hộp cảnh báo
+    console.log(): viết vào trình giao diện điều khiển
+</pre>
+<h1>A Web Page</h1>
+<p id="demo">A Paragraph</p>
+<button type="button" onclick="myFunction()">Try it</button>
+<button type="button" onclick="hiFunction()">Click</button>
+<button type="button" onclick="alertt()">bấm</button>
+
+<script>
+    function myFunction() {
+        document.getElementById("demo").innerHTML = "Paragraph changed.";
+    }
+    function hiFunction() {
+        document.write(5+6);
+    }
+    function alertt() {
+        window.alert(5+6);
+
+    }
+</script>
+
+</body>
+</html>
