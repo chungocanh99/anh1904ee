@@ -3,35 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 <body>
+
+<?php
+/*
+ * nạp file kết nối cơ sở dữ liệu
+ */
+include_once "config.php";
+/**
+ * Lấy id từ trên url xuống
+ */
+$id = (int) $_GET["id"];
+var_dump($id);
+$sqlSelect = "SELECT * FROM products WHERE id=".$id;
+$result = $connection->query($sqlSelect);
+$row = $result->fetch_assoc();
+
+
+echo "<pre>";
+print_r($row);
+echo "</pre>";
+?>
+
 <?php
 
-// nạp file kết nối CSDL
-include_once "config.php";
-
-$product_title = "";
-$product_desc ="";
-$created = "";
-$price = "";
-$quantity ="";
-$status="";
-
-
 /**
- * kiểm tra xem có dữ liệu submit đi hay không
+ * kiểm tra xem dữ liệu có submit đi hay không
  */
-
-if(isset($_POST) && !empty($_POST)) {
-    /**
+if(isset($_POST) && !empty($_POST) && isset($_POST["product_id"])) {
+    /*
      * tạo biến check lỗi mặc định là rỗng
      */
     $errors=array();
-    /**
-     * !isset($_POST["product_title"]) => không tồn tại
-     */
+
     if(!isset($_POST["product_title"]) || empty($_POST["product_title"])) {
         $errors[] = "Tên sản phẩm không hợp lệ";
     }
@@ -50,8 +58,8 @@ if(isset($_POST) && !empty($_POST)) {
     if(!isset($_POST["status"])) {
         $errors[] = "Trạng thái lưu trữ không hợp lệ";
     }
-
     if(empty($errors)) {
+        $id=(int) $_POST["product_id"];
         $product_title=$_POST['product_title'];
         $product_desc=$_POST['product_desc'];
         $created=$_POST['created'];
@@ -59,23 +67,25 @@ if(isset($_POST) && !empty($_POST)) {
         $quantity=$_POST['quantity'];
         $status=$_POST['status'];
 
-        $sqlInsert = "INSERT INTO products (product_title, product_desc, created, price, quantity, status) VALUES ('$product_title','$product_desc','$created','$price','$quantity','$status')";
+        $sqlUpdate ="UPDATE products SET product_title='$product_title',product_desc='$product_desc',created='$created',price='$price',quantity='$quantity',status='$status' WHERE  id=$id";
         // thực hiện câu lệnh SQL
-        $result = $connection->query($sqlInsert);
+        echo $sqlUpdate;
+        $result=$connection->query($sqlUpdate);
 
-        if($result == true) {
+        if ($result == true) {
             echo "<div class='alert alert-success'>
-            Thêm mới sản phẩm thành công <a href='index1.php'>Trang chủ</a>
-            </div>";
+Sửa sản phẩm thành công ! <a href='index1.php'>Trang chủ</a>
+</div>";
         } else {
             echo "<div class='alert alert-danger'>
-            Thêm mới sản phẩm thất bại </div>";
+Sửa sản phẩm thất bại !
+</div>";
         }
-    } else {
-        /*chuyển mảng errors thành chuỗi = hàm implode()*/
-
-        $errors_string = implode("<br>",$errors);
-
+    }else{
+        /**
+         * Chuyển mảng $errors thành chuỗi = hàm implode()
+         */
+        $errors_string = implode("<br>", $errors);
         echo "<div class='alert alert-danger'>$errors_string</div>";
     }
 }
@@ -83,25 +93,26 @@ if(isset($_POST) && !empty($_POST)) {
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1> Tạo sản phẩm mới </h1>
+            <h1> Sửa sản phẩm </h1>
             <form name="create" action ="" method="post">
+                <input type="hidden" name="product_id" value="<?php echo $row["id"]?>">
                 <div class="form-group">
                     <label>Tên sản phẩm: </label>
-                    <input type="text" name="product_title" class="form-control" value="<?php echo $product_title?>">
+                    <input type="text" name="product_title" class="form-control" value="<?php echo $row["product_title"]?>">
                 </div>
                 <div class="form-group">
                     <label>Mô tả sản phẩm: </label>
-                    <input type="text" name="product_desc" class="form-control" value="<?php echo $product_desc?>">
+                    <input type="text" name="product_desc" class="form-control" value="<?php echo $row["product_desc"]?>">
                 </div>
                 <div class="form-group">
                     <label>Thời gian tạo sản phẩm: </label>
-                    <input type="datetime" name="created" class="form-control" value="<?php echo $created?>">
+                    <input type="datetime" name="created" class="form-control" value="<?php echo $row["created"]?>">
                 </div> <div class="form-group">
                     <label>Giá sản phẩm: </label>
-                    <input type="text" name="price" class="form-control" value="<?php echo $price?>">
+                    <input type="text" name="price" class="form-control" value="<?php echo $row["price"]?>">
                 </div> <div class="form-group">
                     <label>Số lượng sản phẩm: </label>
-                    <input type="text" name="quantity" class="form-control" value="<?php echo $quantity?>">
+                    <input type="text" name="quantity" class="form-control" value="<?php echo $row["quantity"]?>">
                 </div>
                 <div class="form-group">
                     <label>Trạng thái sản phẩm: </label>
@@ -110,10 +121,5 @@ if(isset($_POST) && !empty($_POST)) {
 
                 </div>
 
-                <button type="submit" class="btn btn-primary">Tạo sản phẩm</button>
+                <button type="submit" class="btn btn-primary">Sửa sản phẩm</button>
             </form>
-        </div>
-    </div>
-</div>
-</body>
-</html>
