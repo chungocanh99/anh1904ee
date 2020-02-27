@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="info"></div>
+<div id="info1"></div>
+<pre>
+    tạo 1 class tên là sinhvien
+    với các thuộc tính: tên, tuổi, quê, điểm tổng kết, xếp loaiij
+    sau đó khởi tạo đối tượng từ class sinhvien
+    và console.log()
+</pre>
+
+<script type="text/javascript">
+    class sinhvien {
+        constructor(name, tuoi, que, diemtoan, diemvan) {
+            //gán giá trị cho các thuộc tính của class
+
+            this.name = name;
+            this.tuoi = tuoi;
+            this.que = que;
+            this.diemtoan = diemtoan;
+            this.diemvan = diemvan;
+        }
+
+        //khai báo các phương thức cho class
+        thongtin() {
+            //trong clsas muốn gọi đến thuộc tính
+            //hay phương thức dùng từ khóa this
+
+            return "tên là: " + " "+ this.name + "tuổi: " + this.tuoi + "quê quán:" + this.que;
+        }
+
+        tinhdiem() {
+            this.diemtong = (this.diemtoan + this.diemvan) / 2;
+        }
+
+        xeploai() {
+            if (this.diemtong > 5) {
+                this.xeploai = "qua môn";
+
+            } else {
+                this.xeploai = "học lại";
+            }
+        }
+    }
+
+
+
+    //khởi tạo đối tượng từ class sinh viên
+
+    var sv1= new sinhvien("chu ngoc anh","20","son la",3,5);
+    document.getElementById("info").innerText=sv1.thongtin();
+    sv1.tinhdiem();
+    sv1.xeploai();
+    document.getElementById("info1").innerText="xếp loại: " + sv1.xeploai;
+</script>
+</body>
+</html>

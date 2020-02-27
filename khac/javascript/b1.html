@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script>
+        function  myFunction() {
+            document.getElementById("demo4").innerHTML="test";
+        }
+    </script>
+</head>
+<body>
+
+<h1> innerHTML</h1>
+
+<p id="demo1">test thử</p>
+
+<button type="button" onclick='document.getElementById("demo1").innerHTML="Hello Ánh"'>Click
+</button>
+
+<p id="demo2">Thay đổi fontsize</p>
+
+<button type="button" onclick='document.getElementById("demo2").style.fontSize="150px"'>Click</button>
+
+<br>
+<p id="demo3">Ẩn js</p>
+
+<button type="button" onclick="document.getElementById('demo3').style.display='none'">Click</button>
+
+<p id="demo4">gọi trong head</p>
+<button type="button" onclick="myFunction()">click</button>
+
+<p>viết vào đầu ra</p>
+
+<script>
+    document.write(2+1);
+</script>
+
+<hr>
+<h1>khi trước đó có 1 thẻ html, document.write sẽ xóa tất cả</h1>
+
+<button type="button" onclick="document.write(3+4)">click</button>
+
+<br>
+
+<script>
+    window.alert(3+1);
+</script>
+
+<br>
+<script>
+    console.log(1-0);
+</script>
+
+
+</body>
+</html>

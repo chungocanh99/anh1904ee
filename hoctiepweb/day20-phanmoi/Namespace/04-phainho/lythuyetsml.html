@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+    6 điều cần nhớ về namespace, không nhớ là ăn cứt:
+    1: khi mà dùng class, function, biến, hằng trong 1 file khác
+     ở trong file hiện tại phải nạp file đó và file hiện tại
+    thông qua include, required các thứ
+
+    2: không khai báo namespace ở đầu thì file này thuộc
+    dạng namespace toàn cục, 4 file index kia thuộc namespace toàn cục
+
+    3: có 2 cách để khởi tạo 1 class thuộc namespace vào file hiện tại
+    cách 1: new namespace đầy đủ của class đó
+    =>$indexController = new App\Controllers\Backend\IndexController();
+
+    cách 2: nạp namespace kia vào trong file hiện tại, dùng use
+    use + \App\...
+    =>$indexController = new IndexController();
+
+    4: bí danh của thằng namespacce
+    khi 2 class trùng tên, mặc dù namespace vẫn khác nhau thì
+    phải có bí danh, dùng as (alias)
+    use \App\Controllers\Backend\IndexController as BE_IndexController;
+    use \App\Controllers\Backend\IndexController as FE_IndexController;
+
+    sau đó thì $indexController = new + cái chỗ bí danh luôn();
+
+    5. nạp 1 namespace cụ thể: namespace App\Controllers\Backend\IndexController;
+    vào trong namespace toàn cục thì phải thêm dấu \ vào trước
+
+    giống thằng use \... ở trên
+
+    6.nạp namespace cụ thể vào 1 namespace cụ thể:
+    namespace App\Controllers\Backend;
+    use \App\Models\Backend\IndexModel;
+
+    thì không cần dấu \ trước tên namespace mà có dùng thằng use ý
+    tức là use App\...
+
+
+
+
+</pre>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p> addEventListener(sự kiện,hàm) thêm nhiều sự kiện vào 1 phần tử
+</p>
+<button id="myBtn">ấn đi</button>
+
+<p id="demo"></p>
+
+<script>
+    var x=document.getElementById("myBtn");
+
+    x.addEventListener("mouseover",my1);
+    x.addEventListener("click",my2);
+    x.addEventListener("mouseout",my3);
+
+    function my1() {
+        document.getElementById("demo").innerHTML +="hê lô<br>";
+    }
+    function my2() {
+        document.getElementById("demo").innerHTML +="click đi<br>";
+    }
+    function my3() {
+        document.getElementById("demo").innerHTML +="bái bai<br>";
+    }
+
+
+</script>
+</body>
+</html>

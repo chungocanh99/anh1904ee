@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="demo">thay đổi 1 phần tử trong mảng </p>
+<script>
+    var xe=["bmw","honda","wave"];
+    xe[1]="dream";
+    document.getElementById("demo").innerHTML=xe;
+</script>
+
+<p id="demo1"></p>
+<script>
+    var nguoi={name:"anh",age:20};
+    document.getElementById("demo1").innerHTML=nguoi["name"];
+</script>
+
+<hr>
+<p id="demo2">dùng length để trả về số phần tử trong mảng</p>
+<script>
+    var nguoi1=["anh","hung","ly"];
+    document.getElementById("demo1").innerHTML=nguoi1.length;
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var person = {name:"pi", age:7, location:"son la"};
+
+    alert(person.name + " " + "at" + " " + person.location);
+</script>
+
+
+<p id="demo">
+    <script>
+        var person1 = {
+            name1:"anh",
+            age1:20,
+            fullname: function () {
+                return this.name1 + " " + this.age1;
+            }
+        };
+
+        document.getElementById("demo").innerHTML=person1.fullname();
+    </script>
+</p>
+
+</body>
+</html>

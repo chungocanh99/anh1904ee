@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo"></p>
+<p> ở đây dùng getHours()</p>
+<button onclick="myh()">ấn đi</button>
+<script>
+    function myh() {
+        var gio = new Date().getHours();
+
+        var hien;
+        if (gio<18) {
+            hien="học đi";
+        }else {
+            hien = "có thể chơi thêm 1 tí";
+        }document.getElementById("demo").innerHTML=hien;
+    }
+</script>
+</body>
+</html>

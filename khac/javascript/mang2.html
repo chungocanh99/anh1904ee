@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="demo">thêm phần tử vào mảng:push </p>
+<button onclick="myQua()">ấn đi</button>
+<script>
+    var qua=["chuối","táo","cam"];
+    document.getElementById("demo").innerHTML=qua;
+
+    function  myQua() {
+        qua.push("chanh");
+        document.getElementById("demo").innerHTML=qua;
+    }
+
+</script>
+</body>
+</html>

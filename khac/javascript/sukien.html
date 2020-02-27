@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo">
+
+    <button onclick="document.getElementById('demo').innerHTML=Date()">Thời gian?</button>
+</p>
+
+//this nó thay đổi nội dung bên trong luôn
+<p id="demo1">
+    <button ONCLICK="this.innerHTML=Date()"> Thời gian?</button>
+</p>
+
+<p id="demo2">
+</p>
+<button onclick="displayDate()">Thời gian là?</button>
+    <script>
+    function displayDate() {
+        document.getElementById('demo2').innerHTML=Date();
+    }
+    </script>
+
+
+<div onmouseover="this.style.backgroundColor='red'">hi</div>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo"></p>
+<input id="age" value="20">
+<button onclick="my()">ấn đi</button>
+<script>
+function my() {
+
+    var age,vote;
+    age = document.getElementById("age").value;
+    vote = (age < 20) ? "lớn rồi" : "trẻ con ăn chơi đê";
+    document.getElementById("demo").innerHTML = vote;
+}
+</script>
+</body>
+</html>

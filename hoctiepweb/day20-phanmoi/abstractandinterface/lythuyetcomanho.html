@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+    abstract class & interface
+
+    abstract class (class trừu tượng)
+    - trong abstract class vừa có abstract method
+    và các method thông thường
+    - phương thức abstract chỉ có code khai báo tên của method
+    mà không có code thực thi
+    ** nhưng class con kế thừa class abstract phải tiến hành
+    viết code thực thi cụ thể cho các abstract method trong abstract class
+
+    - interface (giao diện)
+    khi 1 class implements(thực thi) 1 interface cụ thể
+    thì class đó phải viết code thực thi cụ thể cho các method bên trong interface
+    các method trong interface thì chỉ phần khai báo tên phương thức mà không có code thực thi
+
+</pre>
+
+class SinhVienModel extends Model implements CRUD {
+    public $tenbang;
+
+    public function setTabel($tableName) {
+        $this->tenbang = $tableName;
+    }
+    public function them() {
+        code thực thi cụ thể
+    }
+    public function sua() {
+        code thực thi cụ thể
+    }
+    public function capnhat() {
+        code thực thi cụ thể
+    }
+    public function xoa() {
+        code thực thi
+    }
+
+    abstract class Model {
+        public abstract function setTable($tableName);
+    }
+
+    interface CRUD {
+        public function them();
+        public function sua();
+        public function xoa();
+        public function capnhat();
+
+
+}
+</body>
+</html>

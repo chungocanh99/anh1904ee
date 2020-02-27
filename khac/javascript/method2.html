@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo"></p>
+<p>sử dụng slice(bắt,kết) để trả về 1 chuỗi</p>
+<script>
+    var str = "kia, con, ga, trong";
+    var res = str.slice(5,8);
+    document.getElementById("demo").innerHTML = res;
+</script>
+<hr>
+<p id="demo1"></p>
+<p>sử dụng substring() để cắt chuỗi</p>
+<script>
+    var str="kia con ga gay";
+    var res=str.substring(5,8);
+    document.getElementById("demo1").innerHTML=res;
+</script>
+<hr>
+<p id="demo2">Ánh kute</p>
+<p>sử dụng replace("","") để thay thế</p>
+
+
+<button onclick="myFunction()">Ấn</button>
+
+<script>
+    function myFunction() {
+        var chuoi=document.getElementById("demo2").innerHTML;
+        var txt=chuoi.replace("kute","hihi");
+        document.getElementById("demo2").innerHTML=txt;
+    }
+</script>
+
+<hr>
+
+<p id="demo3">chuyển sang chữ hoa sử dụng toUpperCase()</p>
+<button onclick="my()">Ấn đi</button>
+
+<script>
+    function my() {
+        var text=document.getElementById("demo3").innerHTML;
+        document.getElementById("demo3").innerHTML=text.toUpperCase();
+    }
+</script>
+
+<hr>
+
+<p id="demo4">Chuyển Chữ viết hoa sang thường: toLowerCase()</p>
+<button onclick="my1()">Ấn vào đi</button>
+
+<script>
+    function my1() {
+        var text1=document.getElementById("demo4").innerHTML;
+        document.getElementById("demo4").innerHTML=text1.toLowerCase();
+    }
+</script>
+
+<hr>
+<p id="demo5">Loại bỏ khoảng trắng:    trim()</p>
+
+<script>
+    function mytrim() {
+        var texttrim = "     hello ánh";
+        document.getElementById("demo5").innerHTML=trim();
+    }
+</script>
+</body>
+</html>

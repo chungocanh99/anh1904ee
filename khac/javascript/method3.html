@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo"></p>
+<p>trả về ký tự tại 1 vị trí trong chuỗi: charAt(số)</p>
+
+<script>
+    var str="hello pi";
+    document.getElementById("demo").innerHTML=str.charAt(2);
+</script>
+
+<p id="demo1">chuyển 1 chuỗi thành 1 mảng</p>
+<button onclick="mychuoi()">ấn đi</button>
+<script>
+    function mychuoi() {
+        var txt = "anh,hung,ly";
+        var arr = txt.split(",");
+        document.getElementById("demo1").innerHTML = arr[1];
+    }
+</script>
+</body>
+</html>

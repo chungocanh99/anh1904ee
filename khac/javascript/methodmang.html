@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p id="demo"></p>
+<p>toString(), join() chuyển 1 mảng thành 1 chuỗi</p>
+<script>
+    var qua=["cam","chuoi","dao"];
+    document.getElementById("demo").innerHTML=qua.toString();
+</script>
+<hr>
+<p id="demo1"></p>
+<p>Đẩy ra phần tử cuối trong mảng: tenmang.pop()</p>
+<script>
+    var qua1=["chanh","xoai","dua"];
+    document.getElementById("demo1").innerHTML=qua1;
+    qua1.pop();
+    document.getElementById("demo1").innerHTML=qua1;
+</script>
+<hr>
+
+<p id="demo2"></p>
+<p>Thêm phần tử trong mảng: tenmang.push("tenpt")</p>
+
+<button onclick="myxe()">ấn đi</button>
+<script>
+    var xe=["bmw","dream","honda"];
+    document.getElementById("demo2").innerHTML=xe;
+
+    function myxe() {
+        xe.push("wave");
+        document.getElementById("demo2").innerHTML=xe;
+    }
+</script>
+
+<hr>
+
+<p id="demo3"></p>
+<p id="demo4"></p>
+<p>ten.push() trả lại độ dài của mảng</p>
+<button onclick="myhoa()">ấn đi nào</button>
+<script>
+    var hoa=["hong","cuc","cham chi","muoi gio"];
+    document.getElementById("demo3").innerHTML=hoa;
+
+    function myhoa() {
+        document.getElementById("demo4").innerHTML=hoa.push("huong duong");
+        document.getElementById("demo3").innerHTML=hoa;
+    }
+</script>
+
+<hr>
+
+<p id="demo5"></p>
+<p>tenmang.shift() loại bỏ phần tử đầu tiên trong mảng</p>
+<script>
+    var kem=["oc que","chanh","hop"];
+    document.getElementById("demo5").innerHTML=kem;
+    kem.shift();
+    document.getElementById("demo5").innerHTML=kem;
+</script>
+
+<hr>
+
+<p id="demo6"></p>
+<p>unshift(tenpt) thêm phần tử mới vào đầu mảng</p>
+<button onclick="mytoc()"> ấn vào đây</button>
+<script>
+    var toc=["dai","ngan"];
+    document.getElementById("demo6").innerHTML=toc;
+
+    function mytoc() {
+        toc.unshift("nho");
+        document.getElementById("demo6").innerHTML = toc;
+    }
+</script>
+
+<hr>
+
+<p id="demo7"></p>
+<p>thay đổi phần tử trong mảng chỉ số</p>
+<script>
+    var chan =["ngan","dai"];
+    document.getElementById("demo7").innerHTML=chan;
+    chan[0]="trung binh";
+    document.getElementById("demo7").innerHTML=chan;
+</script>
+
+<hr>
+
+<p id="demo8"> </p>
+<p>sử dụng thuộc tính ten[ten.length]="tenptu" để thêm 1 phần tử mới</p>
+<button onclick="mychim()"> ấn đây đi</button>
+<script>
+    var chim=["bo cau","dieu hau","qua den"];
+    document.getElementById("demo8").innerHTML=chim;
+
+    function mychim() {
+        chim[chim.length]="canh cut";
+        document.getElementById("demo8").innerHTML=chim;
+    }
+</script>
+
+<hr>
+
+<p>để xóa phần tử dùng delete ten[chỉ số]</p>
+
+<hr>
+
+<p id="demo9"></p>
+<p>cắt 1 mảng ra thành 1 mảng khác dùng slice()</p>
+<script>
+    var dv=["cho","meo","lon","ga"];
+    var cat=dv.slice(2);
+    document.getElementById("demo9").innerHTML=dv +"<br>" + cat;
+</script>
+</body>
+</html>

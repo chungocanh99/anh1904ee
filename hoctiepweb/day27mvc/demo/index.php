@@ -1,18 +1,13 @@
 <?php
-// nạp tất cả các file khác vào trong luồng chạy index.php
-
+// Nạp tất cả các file khác vào trong luồng chạy index.php
 include_once "mvc/route.php";
-
 include_once "mvc/models/Database.php";
-
 include_once "mvc/controllers/PostController.php";
-
 include_once "mvc/controllers/ProductController.php";
-
+include_once "mvc/controllers/IndexController.php";
+include_once "mvc/controllers/ErrorController.php";
 include_once "mvc/models/PostModel.php";
-
 include_once "mvc/models/ProductModel.php";
-
 /**
  * Cần phải hiểu là trong ứng dụng MVC đến Framework
  * mọi request http sẽ đi qua index.php
@@ -32,7 +27,5 @@ include_once "mvc/models/ProductModel.php";
  * View là khai niệm để nói về nội dung chính trong trang
  * Các trang đa số chỉ thay đổi nội dung chính giữa trang mà không thay đổi header hay footer
  */
-
-
 $route = new \MVC\Route();
 $route->run();

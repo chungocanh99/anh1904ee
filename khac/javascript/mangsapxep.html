@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="demo"></p>
+<p>sắp xếp 1 mảng tăng dần dùng ten.sort()</p>
+<script>
+    var hoa=["mai","dao","hong","anh tuc","bong"];
+    hoa.sort();
+    document.getElementById("demo").innerHTML=hoa;
+</script>
+
+<hr>
+
+<p id="demo1"></p>
+<p>sắp xếp mảng giảm dần dùng ten.reverse()</p>
+<button onclick="myqua()">ấn đi</button>
+<script>
+    var qua=["dao","chanh","chuoi","oc cho","sung"];
+    document.getElementById("demo1").innerHTML=qua;
+
+    function myqua() {
+        qua.reverse();
+        document.getElementById("demo1").innerHTML=qua;
+    }
+</script>
+
+<hr>
+
+<p id="demo2"></p>
+<p>sắp xếp số tăng dần dùng ten.soft(hàm(thamso1, thamso2){return thamso1-thamso2})</p>
+<button onclick="mydiem()">ấn đi nào</button>
+<script>
+    var diem=[20,10,5,8,9,40,6];
+    document.getElementById("demo2").innerHTML=diem;
+
+    function  mydiem() {
+        diem.sort(function (a,b){return a-b});
+            document.getElementById("demo2").innerHTML=diem;
+
+    }
+</script>
+
+<hr>
+
+<p id="demo3"></p>
+<p>tìm số nhỏ trong mảng, vị trí do mình nhập cũng tương tự như trên</p>
+<script>
+    var diemm=[20,13,56,32,10,45];
+    diemm.sort(function (a,b){return a-b});
+    document.getElementById("demo3").innerHTML=diemm[3];
+
+</script>
+<hr>
+
+
+<p id="demo4"></p>
+<p>tìm số lớn nhất trong mảng dùng Math.max.apply(null,arr)</p>
+<script>
+    var diem1=[21,35,346,72,74,1];
+    document.getElementById("demo4").innerHTML=Max(diem1);
+
+    function Max(arr) {
+        return Math.max.apply(null,arr);
+    }
+</script>
+</body>
+</html>

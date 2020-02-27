@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p>js loop có thể thực thi mã nhiều lần, mỗi lần với 1 giá trị khác nhau</p>
+<p>for</p>
+<p id="demo"></p>
+<script>
+    var xe=["bmw","honda","dream"];
+    var text="";
+    var i;
+    for (i=0;i< xe.length;i++) {
+        text= text + xe[i] + "<br>";
+    }
+    document.getElementById("demo").innerHTML=text;
+</script>
+
+<hr>
+<p>while: điều kiện đúng thì chạy</p>
+<p id="demo1"></p>
+<script>
+    var text="";
+    var i=0;
+    while(i<10) {
+        text = text + "<br>số thứ " + i;
+        i++;
+    }
+    document.getElementById("demo1").innerHTML=text;
+</script>
+
+<hr>
+<p>do-while: nó sẽ chạy trước, rồi mới kiểm tra điều kiện, nếu đúng
+nó sẽ chạy tiếp</p>
+
+<p id="demo2"></p>
+
+<script>
+    var text1="";
+    var i=0;
+    do {
+        text1 = text1 + "<br>số thứ " + i;
+        i++;
+    }while(i<10);
+    document.getElementById("demo2").innerHTML=text1;
+
+</script>
+
+<hr>
+
+<p>break: dừng ngay tại giá trị đấy</p>
+<p>continue: bỏ qua giá trị đấy mà chạy tiếp</p>
+
+<p id="demo3"></p>
+<script>
+    var text2 = "";
+    var i;
+    for (i = 0; i < 10; i++) {
+        if (i === 3) { break; }
+        text2 += "số thứ " + i + "<br>";
+    }
+    document.getElementById("demo3").innerHTML = text2;
+</script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<pre>
+    static method là phương thức có thể gọi mà
+    KHÔNG CẦN khởi tạo đối tượng
+    - chú ý khi khởi tạo đối tượng bạn sẽ không thể gọi các
+    static method trong class của đói tượng đó
+    đặt từ khóa static trước tên phương thức
+</pre>
+
+<div id="demo">
+
+</div>
+
+<script type="text/javascript">
+    class sinhvien {
+        constructor(ten,tuoi,que) {
+            this.ten=ten;
+            this.tuoi=tuoi;
+            this.que=que;
+        }
+        //phương thức bình thường
+        thongtin() {
+            return "sinh viên tốt" + this.ten;
+        }
+        static tot(lop){
+            /**
+             * bên trong method tĩnh
+             * khi muốn gọi đến phương thức hay thuộc tính khác
+             * KHÔNG ĐƯỢC dùng THIS
+             * mà PHẢI dùng tên class gọi đến thuộc tính hay phương thức
+             * ví dụ bên dưới dùng từ khóa sinhvien.lop
+             */
+            sinhvien.lop = lop;
+            return "sinh viên tốt là: " + sinhvien.lop;
+        }
+    }
+
+    document.getElementById("demo").innerText=sinhvien.tot("là mình nè");
+</script>
+</body>
+</html>

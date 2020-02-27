@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p> heeloo loài người</p>
+<p>sử dụng querySelector()để tìm kiếm phần tử</p>
+
+<p class="hay">hello</p>
+<p class="hay">ni hảo</p>
+<p class="hay">à nhoong</p>
+<p id="demo"></p>
+
+<script>
+    var x=document.querySelectorAll("p.hay");
+    document.getElementById("demo").innerHTML='Đây là câu chào với class="hay": ' + x[2].innerHTML;
+</script>
+
+<hr>
+<p>onchange trong dom</p>
+<script>
+    function myham() {
+        var x=document.getElementById("fname");
+        x.value=x.value.toUpperCase();
+    }
+</script>
+
+enter name: <input type="text" id="fname" onchange="myham()">
+
+
+<hr>
+<p>onmouseover và onmouseout khi di chuột vào phần tử</p>
+
+<div style="background-color: green;width:200px;height:200px;padding:20px;" onmouseover="over(this)" onmouseout="out(this)"></div>
+
+<script>
+    function over(obj) {
+        obj.innerHTML="hêlo"
+    }
+    function out(obj) {
+        obj.innerHTML="gút bai"
+    }
+</script>
+
+<hr>
+<p> addEventListener(sự kiện,hàm) thêm 1 sự kiện vào 1 phần tử
+</p>
+
+<button id="myBtn">ấn đi</button>
+<script>
+    document.getElementById("myBtn").addEventListener("click",function () {
+       alert("helo");
+    });
+</script>
+</body>
+</html>

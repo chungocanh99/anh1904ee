@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<pre> sau khi khai báo class rồi mà muốn thêm thuộc tính hay phương thức thì sử dụng prototype trong js</pre>
+
+<div í="targer"></div>
+<script type="text/javascript">
+    function User(username,password) {
+        //khai báo các thuộc tính
+        this.username=username;
+        this.password=password;
+
+        this.checkLogin = function () {
+            if(this.username=="anh" && this.password=="1221") {
+                return true;
+            }
+            return false;
+        };
+
+
+    }
+    //khai báo thêm thuộc tính remember cho class
+    User.prototype.remember = true;
+    //khai báo thêm phương thức cho class User
+    User.prototype.getInfo = function () {
+        return "username: " +this.username + "password: " + this.password;
+    };
+
+    //khởi tạo đối tượng từ class User
+    var user1 = new User("anh","123456");
+
+
+    if(user1.checkLogin()) {
+        alert("đăng nhập thành công");
+    } else {
+        alert("đăng nhập thất bại");
+    }
+
+    document.getElementById("targer").innerHTML=user1.getInfo();
+</script>
+</body>
+</html>
