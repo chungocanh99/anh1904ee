@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+  *khai báo:  thành phần routing:
+    muốn khai báo 1 route trong laravel phải khai báo 2 thành phần chính là tên và hành động
+
+    Route::get('/',function()
+    {
+        return View::make('hello');
+    });
+    cái đoạn get kia là khi ta request lên server
+    mặc định tất cả các router nằm trong routers/web.php
+</pre>
+<hr>
+<pre>
+    + truyền tham số trên route
+    Route::get('dogs/{id}',function($id) {
+        return 'Dog' .$id;
+    });
+    + không truyền giá trị cho tham số
+    Route::get('dogs/{ten?}',function($ten='default'}{
+    return 'chào' .$ten;
+    gõ vào đường dẫn dogs/123 thì nó sẽ xuất hiện câu rturn
+    biến {id} là biến động và tại hàm function nếu muốn được biến id thì cần phải khai báo 1 tham số tên là $id trên hàm xử lý
+
+    Nếu muốn truyền nhiều biến:
+Route::get('dogs/{id}/{name}',function ($id,$name) {
+    return 'Dog' . $id . ' name is: ' . $name;});
+
+    + đặt điều kiện cho tham số với phương thức where()
+    Route::get('ngayhomnay/{ngay}',function($ngay) {
+    return "ngày hôm nay" . $ngay;
+    })->where(['ngay'=>[a-zA-Z+']); điều kiện regular expression
+    ->where(['so]=>[0-9]+']);
+
+</pre>
+<hr>
+<pre>
+    định danh và nhóm route (giống pre dưới)
+    định danh; gọi route thông qua định danh
+    cách 1: khai báo 'as'=>'tên route' trong tham số:
+    Route::get('myrout',[
+    'as'=>'newname',
+    function(){return "đã đổi tên";}
+    ]};
+
+    cách 2: thêm method name('tên route) ở cuối
+    Route::get('myroute',function() {
+    return "đã đổi tên";})->name('tên route');
+
+    Route::get('myroute',function() {
+    return redirect()->route('teenrout');
+
+    --------
+    route group:
+    gọi từng route trong gr
+
+</pre>
+<pre>
+    chuyển hướng trên route
+
+    cần chức năng khi người dùng truy cập vào route này thì nó
+    chuyển hướng đến route khác
+Route::get('/',function () {
+   return redirect('dogs');
+});
+==> tức là khi vào đường dẫn / thì hệ thống sẽ chuyển đến thằng dogs
+Route::get('dogs',function () {
+   return 'Rất nhiều chó';
+});
+</pre>
+<hr>
+<pre>
+    truyền biến qua view
+    mặc định view ở thư mục resources/views, định dạng đuối .blade.php
+
+    Route::get('about',function () {
+   $number_of_dog=9000;
+   return view('about',compact('number_of_dog'));
+});
+
+    ==>để goiij trả dữ liệu về view thì phải gọi hàm view() với 2 tham số,
+    tham số 1 là tên của file view(thằng about),
+    tham số 2 là hàm compact(), hàm này truyền biến từ route qa view với các tham số là tên của biến, nếu có hơn 1 biến thì viết là compact('bien1','bien2')
+    =>>sau đó phải viết code cho file about.blade.php
+</pre>
+<hr>
+<pre>
+
+    sợ quá;
+    làm việc với database, migration và seeding
+    migration: tương tác với db như thêm, sửa,... bằng cách định nghiax các file migration bằng code
+    rồi sau đó thực thi thì hệ thống sẽ tự động tạo ra các cấu trúc csdl cho chúng mình
+
+    bảng đã phân tích: 2 bảng
+    bảng dogs(id,name,date_of_birth,breed_id,created_at,updated_at)
+    bảng breeds(id,name)
+    --
+    bước 1: tạo file migration
+    php artisan make:migration create_breeds_table --create=breeds
+
+    vào database/migration thì thấy
+    1flie migr có 2 funcion up down ngược nhau,
+    khi thực thi 1 file migr thì nó thực thi hàm up,
+    khi reset hoặc rollback thì thực thi hàm down
+
+    bước 2: config kết nối csdl
+    cần tạo 1 file .env nhớ phải sửa không thì dễ điên lắm
+    ->chạy lệnh php artisan migrate
+</pre>
+
+<hr>
+
+<pre>
+    làm việc với seeding trong laravel
+    seeding là cột công cụ giúp chúng ta tạo dữ liệu cho db mà không cần tạo thủ công,
+    bước 1: tạo class seeding: php artisan make:seeder BreedsTableSeeder
+
+    bước 2: định nghĩa nội dung trong hàm run()
+ public function run()
+    {
+        DB::table('breeds')->insert([
+           ['id'=>1,'name'=>'Husky'],
+           ['id'=>1,'name'=>'Alaska'],
+           ['id'=>1,'name'=>'Pitbull'],
+           ['id'=>1,'name'=>'Becgie'],
+        ]);
+    }
+    ->>đây là tạo thêm 4 records vào bảng breeds
+
+    bước 3: thực thi seeding: php artisan db:seed --class=BreedsTableSeeder
+
+    hoặc khai báo class vừa tạo trong file DatabaseSeeder trong hàm run
+
+
+ public function run()
+ {
+     $this->call(BreedsTableSeeder::class);
+ }
+
+    cái thằng trên là nơi khai báo các seeder của hệ thống,
+    nếu có nhiều seeder và muốn thực thi chúng cùng 1 lúc thì ta cần khai báo
+    vào hàm run và hệ thống thực thi từ trên xuống dưới
+    ==>sau đó chạy lệnh: php artisan db:seed
+</pre>
+
+<hr>
+<pre>
+    làm việc với layout và view Blade Templates trong laravel
+    giữ nguyên header, footer,menu ở tất cả các trang con
+
+    b1: tạo ra thằng folder views/layouts/master.blade.php
+
+    tất cả các file css và js nằm trong thằng public
+
+    tiếp theo sửa lại trang about.blade.php kế thừa layout master này và thay đổi
+    các thành phần động
+</pre>
+
+</body>
+</html>

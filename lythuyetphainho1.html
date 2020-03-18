@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+    cơ bản về controller
+    khi người dùng gửi yêu cầu url lên hệ thống,
+    route trỏ các yêu cầu sang các hành động tương ứng
+    controller quản lý các hành động
+
+    cấu trúc: thư mục app/http/controllers
+    + tạo controller:php artisan make:controller MyController
+    + gọi controller phải thông qua route
+    gọi: Route::get('goiController/{id}','MyController@GetData');
+    nhận duwxw liệu bên controller
+    class MyController extends Controller
+    {
+        public function GetData($id){
+    echo "chào";
+    }
+    }
+</pre>
+<hr>
+
+<pre>
+    truyền dữ liệu từ route cho controller
+</pre>
+<pre>
+    làm việc với URL trên Request
+    - cài đặt route: Route::get('teenham','tên class@tên phuowngthuc');
+    - bên controller:
+    class tên class extends Controller {
+        public function teenpthuc(Request $request) {
+    echo $request->path();
+
+    * mở rộng:
+    $request->url(): trả về url đầy đủ
+    $request->is('admin/*'); kiểm tra url có chứa chuỗi 'admin/' hay không
+    $request->isMethod('post') ; phải cho vào if else, kiểm tra phương thức truyền
+</pre>
+
+<hr>
+<pre>
+    gửi nhận tham số trên request
+    đầu tiên là phải tạo 1 thằng view form với phương thức là post -> tạo 1 thằng route tên là getForm ->
+    -> nó trỏ sang controller để xử lý-> tạo route phương thức là post, nó nhận dữ liệu từ form->ở bên controller có hàm postForm-> các thứ các thứ
+
+    phương thức:
+    $request->has('name'): kiểm tra tham số name tồn tại không
+    ->input('id'): nhận dữ liệu từ thẻ input name="id">
+    ->input('products.0.name'): nhận dữ liệu từ mảng
+    ->input('user.name'); nhận dữ liệu từ JSON dạng mảng
+    all(): nhận hết dữ liệu, lưu thành dạng mảng
+    only('age'): chỉ nhận tham số age
+    except('age'); ngược trên
+
+</pre>
+</body>
+</html>

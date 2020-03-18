@@ -18,6 +18,7 @@
         $n1 = $_POST["so1"];
         $n2 = $_POST["so2"];
         $pt = $_POST["pt"];
+
         $flag=true;
 
         if (is_numeric($n1) && is_numeric($n2)) {

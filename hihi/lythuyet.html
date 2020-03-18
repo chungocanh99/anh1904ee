@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<pre>
+    phần 1 là biết rồi
+</pre>
+<hr>
+
+<pre>
+    laravel middleware cơ chế bộ lọc trung gian
+    - laravel cung cấp 1 middleware để xác nhận xem người dùng
+    đã xác thực chưa, nếu đã qua xác thực thì sẽ chuyển hướng đến
+    trang quản trị, nếu chưa thì được chuyển đến trang đăng nhập
+    - nó nằm trong http
+    - tạo 1 middleware: php artisan make:middleware + tên
+    -bước 2: sau khi đã có cái file tên ở trên nằm trong http/midd, thêm đoạn code
+
+</pre>
+<hr>
+<pre>
+    chúng ta cần đăng ký midd với hệ thống
+    - global midd -> liên quan đến $midd
+    - route midd -> liên quan đến $routeMidd
+
+    khi midd đã được định nghĩa trong kernel thì ta gán chúng với các route
+    Route::get('/
+</pre>
+
+<pre>
+    truyền tham số cho middleware
+    Người dùng trong hệ thống có nhiều vai trò như user, admin,superadmin
+    chúng ta muốn xác thực người dùng dựa trên vai trò thì cần truyền tham số cho Middleware
+    bước 1: tạo middleware RoleMiddleware
+    php artisan make:middleware RoleMiddleware
+</pre>
+</body>
+</html>
