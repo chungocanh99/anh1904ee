@@ -52,7 +52,7 @@
 ?>
 
 <div class="content">
-    <h1> Test</h1>
+    <h1>Mô phỏng máy tính bỏ túi</h1>
     <form action="#" method="post" name="main-form">
         <div class="row">
             <span>Số thứ nhất</span>
